@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Texto</title>
+</head>
+<body>
+    <h1>Editar Texto Resaltado</h1>
+    <form action="/modify" method="post">
+        <!-- Campo oculto para pasar el nombre del archivo -->
+        <input type="hidden" name="file_name" value="{{ file_name }}">
+        
+        {% for text in highlighted_text %}
+            <label>{{ text }}</label>
+            <input type="text" name="{{ text }}" value="{{ text }}">
+            <br>
+        {% endfor %}
+        <button type="submit">Descargar Archivo Modificado</button>
+    </form>
+</body>
+</html>
